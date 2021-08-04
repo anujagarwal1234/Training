@@ -2,19 +2,18 @@
 public class Exercise6 {
 
 	public static void main(String[] args) {
-		String Fname="Anuj";
-		String Lname="Agarwal";
+		String Fname="Pankaj";
+		String Lname="Sharma";
 		String Company="Yash Technologies";
-		String Role="Trainee";
+		String Role="Trainer";
 		
-		void String generatePassword()
-		{
-			String password;
-			String pasword = Fname.substring(0, 1);
-			password = password.concat((String) (Lname.subSequence(0, 1));
-			password = pas
-			return password;
-		}
+
+		String password = Fname.substring(0, 2);
+		password = password.concat(Lname.substring(0, 2));
+		password = password.concat(Company.substring(0, 2));
+		password = password.concat(Role.substring(0, 2));
+		System.out.println(password);
+		
 
 	}
 
