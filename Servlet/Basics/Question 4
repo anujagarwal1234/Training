@@ -1,1 +1,62 @@
 
+/* HTML Code*/
+
+/*<!DOCTYPE html>
+<html>
+<body>
+<form action="add" method="post">
+Enter Value : <input type="text" name="num1">
+Enter Value : <input type="text" name="num2">
+<input type="submit">
+</form>
+</body>
+</html>*/
+
+
+/*Servlet Code*/
+package com.yash.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class AddServlet
+ */
+@WebServlet("/AddServlet")
+public class AddServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	
+	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		PrintWriter out = res.getWriter();
+		
+		int i = Integer.parseInt(req.getParameter("num1"));
+		int j = Integer.parseInt(req.getParameter("num2"));
+		
+		int k = i + j;
+		
+		
+		out.println("result is : "+k);
+	}
+ 
+}
+
+/* web.xml */
+/*<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+ <servlet>
+	<servlet-name>Addition</servlet-name>
+	<servlet-class>com.yash.servlet.AddServlet</servlet-class> 
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>Addition</servlet-name>
+ 	<url-pattern>/add</url-pattern>
+ </servlet-mapping>
+</web-app>*/
